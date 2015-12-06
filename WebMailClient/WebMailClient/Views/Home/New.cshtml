@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@using WebMailClient.viewmodel
+@model WebMailClient.viewmodel.mailmessageviewmodel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(".navbar-right").css("display", "none");
+</script>
+
+
+@using (Html.BeginForm("New","Home",FormMethod.Post)){
+<div>
+    <table class="table table-condensed">
+        <tr class="row">
+            <td class="success col-md-3">
+                To:
+            </td>
+            <td class="col-md-9">
+                @Html.TextBoxFor(s => s.To, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                CC:
+            </td>
+            <td class="col-md-9">
+                @Html.TextBoxFor(s => s.Cc, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                BCC:
+            </td>
+            <td class="col-md-9">
+                @Html.TextBoxFor(s => s.Bcc, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                Subject:
+            </td>
+            <td class="col-md-9">
+                @Html.TextBoxFor(s => s.Subject, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                Body:
+            </td>
+            <td class="col-md-9">
+                <div style="width:100%">
+                    <span>
+                        @Html.TextAreaFor(s => s.Body, new { @class = "form-control" })
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                Attachement:
+            </td>
+            <td class="col-md-9">
+                <div style="width:100%">
+                    <input type="file" id="attachement" />
+                </div>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3"></td>
+            <td class="col-md-9">
+                <div style="width:100%">
+                    <input type="submit" id="SendEmail" class="btn-success" value="Send Email" />
+                    <span>@ViewBag.Alert</span>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+}
+

@@ -1,0 +1,26 @@
+﻿@model WebMailClient.viewmodel.inboxviewmodel
+@{
+    ViewBag.Title = "Inbox";
+}
+
+<table class="table table-condensed">
+    <tr class="row">
+        <th class="col-md-7">Subject</th>
+        <th class="col-md-2">From</th>
+        <th class="col-md-3">Date Time</th>
+    </tr>
+    @{
+        foreach (var item in Model.AllMessages)
+        {
+            <tr class="row">
+                <td class="success col-md-7"><a href="/Home/Detail?id=@item.Uid.ToString()">@item.Subject</a></td>
+                <td class="success col-md-2">@item.From</td>
+                <td class="success col-md-3">@item.Date</td>
+            </tr>
+        }
+    }
+    
+</table>
+
+
+    

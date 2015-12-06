@@ -1,0 +1,16 @@
+﻿@using WebMailClient.Models;
+@using Microsoft.AspNet.Identity
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+{
+    var obj = (LoginViewModel)Session["Model"];
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @if (obj != null)
+            {
+                @Html.ActionLink("Hello " + obj.Email + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            }
+            
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+}

@@ -1,0 +1,98 @@
+﻿@using WebMailClient.viewmodel
+@model IMAP.Base.Framework.MailMessage
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-5">
+        @{
+        var attmodel = new messageinfoviewmodel
+        {
+            uid = @Model.Uid
+        };
+        }
+        @Html.ActionLink("Reply", "Reply", "Home", attmodel, new { @class = "btn-success" })
+        @Html.ActionLink("Forward", "Forward", "Home", attmodel, new { @class = "btn-success" })
+        @Html.ActionLink("Delete", "Delete", "Home", attmodel, new { @class = "btn-success" })
+    </div>
+</div>
+
+<h4>@Model.Subject</h4>
+<div>
+    <table class="table table-condensed">
+        <tr class="row">
+            <td class="success col-md-3">
+                From:
+            </td>
+            <td class="col-md-9">
+                <span>@Model.From</span>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                CC:
+            </td>
+            <td class="col-md-9">
+                @{
+                    foreach (var item in Model.Cc)
+                    {
+                        <span>@item.Host @item.User</span>;
+                    }
+                }
+
+            </td>
+
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                BCC:
+            </td>
+            <td class="col-md-9">
+                @{
+                    foreach (var item in Model.Bcc)
+                    {
+                        <span>@item.Host @item.User</span>;
+                    }
+                }
+
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                Body:
+            </td>
+            <td class="col-md-9">
+                <div style="width:100%">
+                    <span>
+                        @Html.Raw(Model.Body)
+                        @*@Model.Body*@
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="success col-md-3">
+                Attachement:
+            </td>
+            <td class="col-md-9">
+                <div style="width:100%">
+                    <span>
+                        @{
+                            foreach (var item in Model.Attachments)
+                            {
+                                var att = new attachementviewmodel
+                                {
+                                    FileName = item.Filename
+                                };
+                                @Html.ActionLink(@item.Filename, "Download", "Home", att, null)
+                            }
+                        }
+                    </span>
+                </div>
+            </td>
+
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMailClient", "WebMailClient\WebMailClient.csproj", "{700358EA-E6EF-4C9C-82E4-3EDB5A529326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMAP.Base", "IMAP.Base\IMAP.Base.csproj", "{ADAB05DB-928F-46A3-8E25-1C8B3D5B1A16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{700358EA-E6EF-4C9C-82E4-3EDB5A529326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{700358EA-E6EF-4C9C-82E4-3EDB5A529326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{700358EA-E6EF-4C9C-82E4-3EDB5A529326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{700358EA-E6EF-4C9C-82E4-3EDB5A529326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAB05DB-928F-46A3-8E25-1C8B3D5B1A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAB05DB-928F-46A3-8E25-1C8B3D5B1A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAB05DB-928F-46A3-8E25-1C8B3D5B1A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAB05DB-928F-46A3-8E25-1C8B3D5B1A16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
